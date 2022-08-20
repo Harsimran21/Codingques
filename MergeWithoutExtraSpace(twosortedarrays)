@@ -1,0 +1,32 @@
+class Solution{
+    public:
+        //Function to merge the arrays.
+        void merge(long long arr1[], long long arr2[], int n, int m) 
+        {   long long int len=n-1;
+            long long int temp=0;
+            int less=n;
+            if(n>m)
+            less=m;
+            else
+            less=n;
+            for(long long int i=0;i<less;i++){
+                
+                if(arr2[i]<arr1[len]){
+                temp=arr1[len];
+                arr1[len]=arr2[i];
+                arr2[i]=temp;
+                len--;
+                }
+                else
+                {break;}
+                
+            }
+           
+            sort(arr1,arr1+n);
+            sort(arr2,arr2+m);
+           
+             
+        }
+            
+        
+};
